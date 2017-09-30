@@ -1,17 +1,16 @@
-require_relative('./die')
-
 class Dice
 
-    def initialize(dice)
-        @dice = dice
+  def roll()
+    result = []
+    4.times do
+      roll = rand(1..6)
+      result << roll
     end
+    return result
+  end
 
-    def roll_to_score()
-        @dice.sort!()
-        @dice.reverse!()
-        joined_dice = @dice.join()
-        integer_dice = joined_dice.to_i()
-        return integer_dice
-    end
+  def roll_to_score(result)
+    return  result.sort.reverse.join.to_i()
+  end
 
 end
